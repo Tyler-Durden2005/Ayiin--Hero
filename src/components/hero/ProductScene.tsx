@@ -24,7 +24,7 @@ type ProductSceneProps = {
  * choreography keeps working untouched.
  */
 export function ProductScene({ item, mounted, preload }: ProductSceneProps) {
-  const { asset, fit, offsetY = 0 } = item;
+  const { asset, fit, offsetX = 0, offsetY = 0 } = item;
 
   return (
     <div
@@ -34,6 +34,7 @@ export function ProductScene({ item, mounted, preload }: ProductSceneProps) {
         {
           "--fit-w": fit.width,
           "--fit-h": fit.height,
+          "--offset-x": offsetX,
           "--offset-y": offsetY,
         } as CSSProperties
       }

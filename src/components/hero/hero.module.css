@@ -263,6 +263,7 @@
 .visual {
   position: relative;
   top: calc(var(--offset-y, 0) * 100%);
+  left: calc(var(--offset-x, 0) * 100%);
   width: auto;
   height: auto;
   max-width: calc(min(100%, 1180px) * var(--fit-w, 1));

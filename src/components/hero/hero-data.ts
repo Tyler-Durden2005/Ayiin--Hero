@@ -37,6 +37,11 @@ export type HeroItem = {
   fit: { width: number; height: number };
   /** Vertical nudge as a fraction of stage height (+ is down). */
   offsetY?: number;
+  /**
+   * Horizontal nudge as a fraction of stage width (+ is right), for cutouts
+   * whose visual weight is not in the middle of the image.
+   */
+  offsetX?: number;
   /** Contact-shadow width relative to the stage width. */
   shadow: number;
   /** Backdrop colour the whole hero takes on while this product is on stage. */
@@ -151,9 +156,10 @@ export const heroItems: HeroItem[] = [
     },
     alt: "Round gold-frame sunglasses with brown gradient lenses",
     animationProfile: "accessories",
-    fit: { width: 0.94, height: 0.7 },
-    offsetY: 0.06,
-    shadow: 0.46,
+    fit: { width: 0.7, height: 0.7 },
+    // the lenses sit left of the image's centre; the temple arm trails right
+    offsetX: 0.035,
+    shadow: 0.36,
     bg: "#544a30",
     side: "left",
   },
